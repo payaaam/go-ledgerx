@@ -165,6 +165,7 @@ type ListTradeData struct {
 	StatusType    string `json:"status_type"`
 	Created       string `json:"created"`
 	Timestamp     string `json:"timestamp"`
+	Side          string `json:"side"`
 }
 
 type CreateOrderRequest struct {

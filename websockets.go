@@ -213,16 +213,16 @@ func (l *LedgerX) handleMessage(data []byte) error {
 func handleInfoMessage(messageType string, data []byte) bool {
 	switch messageType {
 	case ChanAuthSuccess:
-		log.Warn("Ledger authentication Successful")
+		//log.Warn("Ledger authentication Successful")
 		return true
 	case ChanAuthFailure:
-		log.Warn("Ledger authentication Failure")
+		//log.Warn("Ledger authentication Failure")
 		return true
 	case ChanMeta:
-		log.Warn("Ledger received session ID.")
+		//log.Warn("Ledger received session ID.")
 		return true
 	case ChanStateManifest:
-		log.Warn("Ledger received state manifest.")
+		//log.Warn("Ledger received state manifest.")
 		return true
 	default:
 		return false
