@@ -53,6 +53,21 @@ type ActionReportResponse struct {
 	StatusReason        int    `json:"status_reason"`
 }
 
+type ContractUpdateResponse struct {
+	ContractID      int64      `json:"id"`
+	Label           string     `json:"label"`
+	UnderlyingAsset string     `json:"underlying_asset"`
+	CollateralAsset string     `json:"collateral_asset"`
+	Active          bool       `json:"active"`
+	Type            string     `json:"type"`
+	StrikePrice     int64      `json:"strike_price"`
+	MinIncrement    int64      `json:"min_increment"`
+	DateLive        LedgerTime `json:"date_live"`
+	DateExpires     LedgerTime `json:"date_expires"`
+	DateExercise    LedgerTime `json:"date_exercise"`
+	DerivativeType  string     `json:"derivative_type"`
+}
+
 func (a *ActionReportResponse) String() string {
 	json, _ := json.Marshal(a)
 	return string(json)
