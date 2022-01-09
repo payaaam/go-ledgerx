@@ -202,6 +202,16 @@ func (l *LedgerX) handleMessage(data []byte) error {
 			Type: ChanHeartbeat,
 			Data: jsonRes,
 		}
+	case ChanContractRemoved:
+		var jsonRes ContractUpdateResponse
+		err := json.Unmarshal(data, &jsonRes)
+		if err != nil {
+			return errors.Errorf("Error during unmarshal ContractUpdateResponse: %s", string(data))
+		}
+		l.msg <- Message{
+			Type: ChanContractRemoved,
+			Data: jsonRes,
+		}
 	default:
 		if handleInfoMessage(res.Type, data) == false {
 			return errors.Errorf("Unexpected message: %s", string(data))
