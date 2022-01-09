@@ -21,6 +21,7 @@ const (
 	ChanAuthFailure         = "unauth_success"
 	ChanStateManifest       = "state_manifest"
 	ChanContractRemoved     = "contract_removed"
+	ChanContractAdded       = "contract_added"
 )
 
 // Contract IDs
